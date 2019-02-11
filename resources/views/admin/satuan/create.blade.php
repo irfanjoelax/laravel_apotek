@@ -1,0 +1,31 @@
+@extends('layouts.master')
+
+@section('content')
+    <div class="row grid-responsive">
+        <div class="column ">
+            <div class="card">
+                <div class="card-title">
+                    <h3>Tambah Data Satuan</h3>
+                </div>
+                <div class="card-block">
+                    <form class="form-horizontal" action="{{ route('satuan.store') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="nama_satuan" class="col-sm-2 control-label">Nama Satuan</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="nama_satuan" id="nama_satuan" placeholder="Nama Satuan" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="button"><em class="fa fa-check"></em> TAMBAH DATA</button>
+                                <a href="{{ route('satuan.index') }}" class="button button-outline"><em class="fa fa-remove"></em> BATAL</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
